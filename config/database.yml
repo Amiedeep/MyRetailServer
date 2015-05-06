@@ -1,0 +1,17 @@
+development:
+  adapter: postgresql
+  encoding: utf8
+  database: my_retail
+  username: postgres
+  host: localhost
+  pool: 5
+  timeout: 5000
+
+test:
+  adapter: postgresql
+  encoding: utf8
+  database: my_retail_test
+  username: postgres
+  host: localhost
+  pool: 5
+  timeout: 5000
