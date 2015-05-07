@@ -16,13 +16,11 @@ ActiveRecord::Schema.define(version: 20150506110856) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "categories", id: false, force: :cascade do |t|
-    t.integer "id"
-    t.string  "name"
+  create_table "categories", force: :cascade do |t|
+    t.string "name"
   end
 
-  create_table "items", id: false, force: :cascade do |t|
-    t.integer "id"
+  create_table "items", force: :cascade do |t|
     t.string  "name"
     t.text    "detail"
     t.decimal "price"

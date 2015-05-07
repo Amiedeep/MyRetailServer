@@ -4,10 +4,6 @@ class ItemsController < ApplicationController
   end
 
   def show
-    item_id = params[:id]
-    respond_to do |format|
-      format.html
-      format.json { render :json => Item.where(id: item_id).first.to_json }
-    end
+    render json: Item.where(id: params[:id]).first.to_json
   end
 end
