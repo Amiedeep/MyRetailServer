@@ -9,8 +9,7 @@
 
 
 def image_to_encoded_string(image)
-  binary = File.binread image
-  binary.unpack('B*').first.delete(' ')
+  Base64.encode64(File.open(image, "rb") {|io| io.read})
 end
 
 
