@@ -12,16 +12,48 @@ def image_to_encoded_string(image)
   Base64.encode64(File.open(image, "rb") {|io| io.read})
 end
 
+tv_details = <<-D
+HD Ready, 1366 x 768,
+2 x HDMI, 1 x USB
+D
 
-Item.create(id: 1, name: 'TV', detail: 'lcd tv', image:  image_to_encoded_string('./public/images/tv.jpeg'), price:5600, category_id: 10)
-Item.create(id: 2, name: 'Microwave', detail: 'microwave', image:  image_to_encoded_string('./public/images/microwave.jpeg'), price:4000, category_id: 10)
+microwave_details = <<-D
+Power Output : 900 W
+Auto Cook Menu : 151
+Controls : Tact (Buttons)
+D
 
-Item.create(id: 3, name: 'Chair', detail: 'Chair', image:  image_to_encoded_string('./public/images/chair.jpeg'), price:1000, category_id: 20)
-Item.create(id: 4, name: 'Table', detail: 'Table', image:  image_to_encoded_string('./public/images/table.jpeg'), price:5000, category_id: 20)
+chair_details = <<-D
+Coleman Broadband Quad Chair
+D
 
-Item.create(id: 5, name: 'T-Shirt', detail: 't-shirt', image:  image_to_encoded_string('./public/images/t_shirt.jpeg'), price:1500, category_id: 30)
-Item.create(id: 6, name: 'Jeans', detail: 'jeans', image:  image_to_encoded_string('./public/images/jeans.jpeg'), price:800, category_id: 30)
+table_details = <<-D
+Wooden
+Height - 15.24 cm
+Width - 30.48 cm
+Weight - 2100 g
+D
+
+t_shirt_details = <<-D
+Weardo Solid Men's Polo T-Shirt
+D
+
+jeans_details = <<-D
+Coaster Slim Fit Men's Jeans
+Mid Rise
+Light Blue
+D
+
+
+Item.create(id: 1, name: 'TV', detail: tv_details, image:  image_to_encoded_string('./public/images/tv.jpeg'), price:5600, category_id: 10)
+Item.create(id: 2, name: 'Microwave', detail: microwave_details, image:  image_to_encoded_string('./public/images/microwave.jpeg'), price:4000, category_id: 10)
+
+Item.create(id: 3, name: 'Chair', detail: chair_details, image:  image_to_encoded_string('./public/images/chair.jpeg'), price:1000, category_id: 20)
+Item.create(id: 4, name: 'Table', detail: table_details, image:  image_to_encoded_string('./public/images/table.jpeg'), price:5000, category_id: 20)
+
+Item.create(id: 5, name: 'T-Shirt', detail: t_shirt_details, image:  image_to_encoded_string('./public/images/t_shirt.jpeg'), price:1500, category_id: 30)
+Item.create(id: 6, name: 'Jeans', detail: jeans_details, image:  image_to_encoded_string('./public/images/jeans.jpeg'), price:800, category_id: 30)
 
 Category.create(name: 'Electronics', id: 10)
 Category.create(name: 'Furniture', id: 20)
-Category.create(name: 'Cloths', id: 30)
+Category.create(name: 'Clothing', id: 30)
